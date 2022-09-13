@@ -1,7 +1,7 @@
 public class Circles {
     public static void main(String[] args) {
 //6.Циклы.Часть 2.
-    // ДЗ 1
+        // ДЗ 1
         //Задание 1.
         int mounth;
         int sumAccumulation = 29_000;
@@ -19,35 +19,36 @@ public class Circles {
             numSubsequence++;
         }
         System.out.println();
-        for (numSubsequence = 10; numSubsequence >0; numSubsequence -= 1) {
+        for (numSubsequence = 10; numSubsequence > 0; numSubsequence -= 1) {
             System.out.print(numSubsequence + " ");
         }
         //Задание 3.
         int population = 12_000_000;
         int partPopulation = 1_000;
-        int fertility = 17 * (population / partPopulation);
-        int mortality = 8 * (population / partPopulation);
-        int growthToYear = (fertility - mortality);
-        int sumGrowth = population + growthToYear;
+        int fertility = 17;
+        int mortality = 8;
         int year;
         for (year = 1; year <= 10; year++) {
-            System.out.println(year + "й год прирост населения: " + sumGrowth);
-            sumGrowth += growthToYear;
+            int coefficientOfFertility = fertility * population / partPopulation;
+            int coefficientOfMortality = mortality * population / partPopulation;
+            population = population + coefficientOfFertility - coefficientOfMortality;
+            System.out.println(year + "й год прирост населения: " + population);
         }
-    //ДЗ 2
+        //ДЗ 2
         //Задание 1.
         int deposition = 15_000;
         int percentOfDeposit = deposition / 100 * 7;
-        int month = 1;
+        int movnth = 1;
         sumAccumulation = deposition + percentOfDeposit;
         while (sumAccumulation <= 12_006_000) {
-            System.out.println(mounth + "й месяц накоплено:" + sumAccumulation);
+            System.out.println(movnth + "й месяц накоплено:" + sumAccumulation);
             sumAccumulation += (deposition + percentOfDeposit);
-            month++;
+            movnth++;
+
         }
         //Задание 2.
         percentOfDeposit = deposition / 100 * 7;
-        month = 1;
+        int month = 1;
         sumAccumulation = deposition + percentOfDeposit;
         int sumAllAccumulation = sumAccumulation / 100 * 7 + sumAccumulation;
         while (sumAllAccumulation <= 12_039_000) {
@@ -58,7 +59,6 @@ public class Circles {
             month++;
         }
         //Задание 3.
-        deposition = 15_000;
         percentOfDeposit = deposition / 100 * 7;
         year = month * 12;
         int dete = year * 9;
@@ -75,7 +75,7 @@ public class Circles {
         month = 31;
         for (interval = 7; interval <= month; interval += 7)
             System.out.println("Today friday " + interval + "th. Need to prepare a report.");
-    //ДЗ 3
+        //ДЗ 3
         //Задание 1.
         int date = 2096;
         int min = date - 200;
