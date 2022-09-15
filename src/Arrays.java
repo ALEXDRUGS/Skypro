@@ -19,7 +19,54 @@ public class Arrays {
         System.out.println(numbers[2] + ", " + numbers[1] + ", " + numbers[0]);
         System.out.println(arr[2] + ", " + arr[1] + ", " + arr[0]);
         //Задача 4
-        for (int i = 0; i < array.length; i++)
-            if (array[i] % 2 != 0) System.out.print(array[i] + 1 + " ");
+        for (int j : array) if (j % 2 != 0) System.out.print(j + 1 + " ");
+        generateRandomArray();
+        fullName();
+    }
+
+    //Массивы ч.2
+    //Создание массива и заполнение случайными целочисленными значениями
+    public static void generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arrays = new int[30];
+        for (int i = 0; i < arrays.length; i++) {
+            arrays[i] = random.nextInt(100_000) + 100_000;
+        }
+        System.out.println();
+        for (int index = 0; index < arrays.length; index++) {
+            if (index == arrays.length - 1) {
+                System.out.println(arrays[index]);
+                break;
+            }
+            System.out.print(arrays[index] + " ");
+        }
+        //Задача 1
+        int sum = 0;
+        int max = 0;
+        int min = 200_000;
+        for (int array : arrays) {
+            sum = sum + array;
+        //Задача 2
+            if (max < array) max = array;
+            if (min > array) min = array;
+        }
+        //Задача 3
+        var mean = sum / arrays.length;
+        System.out.println("Сумма затрат за месяц составила " + sum + " рублей.");
+        System.out.println("Максимальная сумма затрат за день" + max + " рублей" + "\n"
+                + "Минимальная сумма затрат за день " + min + " рублей");
+        System.out.println("Средняя сумма затрат в месяц " + mean + " рублей");
+    }
+        //Задача 4
+    public static void fullName() {
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char revers;
+        int length = reverseFullName.length;
+        for (int i = 0; i < length / 2; i++) {
+            revers = reverseFullName[length - i - 1];
+            reverseFullName[length - i - 1] = reverseFullName[i];
+            reverseFullName[i] = revers;
+        }
+        System.out.println(reverseFullName);
     }
 }
