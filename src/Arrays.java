@@ -59,7 +59,7 @@ public class Arrays {
             }
         }
         //Задача 3
-        double mean = sum / arrays.length;
+        double mean = (double) sum / arrays.length;
         System.out.println("Сумма затрат за месяц составила " + sum + " рублей.");
         System.out.println("Максимальная сумма затрат за день" + max + " рублей" + "\n"
                 + "Минимальная сумма затрат за день " + min + " рублей");
