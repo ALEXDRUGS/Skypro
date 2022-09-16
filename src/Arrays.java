@@ -19,14 +19,18 @@ public class Arrays {
         System.out.println(numbers[2] + ", " + numbers[1] + ", " + numbers[0]);
         System.out.println(arr[2] + ", " + arr[1] + ", " + arr[0]);
         //Задача 4
-        for (int j : array) if (j % 2 != 0) System.out.print(j + 1 + " ");
-        generateRandomArray();
+        for (int j : array) {
+            if (j % 2 != 0) {
+                System.out.print(j + 1 + " ");
+            }
+        }
+        spendingCount();
         fullName();
     }
 
     //Массивы ч.2
     //Создание массива и заполнение случайными целочисленными значениями
-    public static void generateRandomArray() {
+    public static void spendingCount() {
         java.util.Random random = new java.util.Random();
         int[] arrays = new int[30];
         for (int i = 0; i < arrays.length; i++) {
@@ -46,18 +50,23 @@ public class Arrays {
         int min = 200_000;
         for (int array : arrays) {
             sum = sum + array;
-        //Задача 2
-            if (max < array) max = array;
-            if (min > array) min = array;
+            //Задача 2
+            if (max < array) {
+                max = array;
+            }
+            if (min > array) {
+                min = array;
+            }
         }
         //Задача 3
-        var mean = sum / arrays.length;
+        double mean = sum / arrays.length;
         System.out.println("Сумма затрат за месяц составила " + sum + " рублей.");
         System.out.println("Максимальная сумма затрат за день" + max + " рублей" + "\n"
                 + "Минимальная сумма затрат за день " + min + " рублей");
         System.out.println("Средняя сумма затрат в месяц " + mean + " рублей");
     }
-        //Задача 4
+
+    //Задача 4
     public static void fullName() {
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         char revers;
