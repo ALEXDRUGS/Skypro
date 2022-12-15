@@ -24,8 +24,9 @@ public class Arrays {
                 System.out.print(j + 1 + " ");
             }
         }
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         spendingCount();
-        fullName();
+        fullName(reverseFullName);
     }
 
     //Массивы ч.2
@@ -67,15 +68,16 @@ public class Arrays {
     }
 
     //Задача 4
-    public static void fullName() {
-        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+    public static void fullName(char[] reverseFullName) {
+        boolean b = (reverseFullName != null && !java.util.Arrays.toString(reverseFullName).isBlank());
         char revers;
-        int length = reverseFullName.length;
-        for (int i = 0; i < length / 2; i++) {
-            revers = reverseFullName[length - i - 1];
-            reverseFullName[length - i - 1] = reverseFullName[i];
-            reverseFullName[i] = revers;
+        if (b) {
+            for (int i = 0; i < reverseFullName.length / 2; i++) {
+                revers = reverseFullName[reverseFullName.length - i - 1];
+                reverseFullName[reverseFullName.length - i - 1] = reverseFullName[i];
+                reverseFullName[i] = revers;
+            }
+            System.out.println(reverseFullName);
         }
-        System.out.println(reverseFullName);
     }
 }
